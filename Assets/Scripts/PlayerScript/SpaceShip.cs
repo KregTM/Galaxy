@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpaceShip : MonoBehaviour
 {
-    private float speed = 0.2f;
+    private float speed = 0.125f;
     private float health = 100;
     public GameObject playerBullet;
     public SpriteRenderer spriteRenderer;

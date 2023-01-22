@@ -7,7 +7,7 @@ public class EnemyShip : MonoBehaviour
     public delegate void OnDeath(EnemyShip deadShip);
     public event OnDeath DeathEvent;
 
-    public float heal = 100;
+    public float heal = 500;
     public GameObject bullet;
     
 

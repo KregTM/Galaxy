@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShipOriginal: {fileID: 755969739780885169, guid: cde8f9a4e81238247996ef627c093adf, type: 3}
   enemyGroupOriginal: {fileID: 1070365575680359940, guid: fbfdb23d3a2053c4c87346cddbbfb5a8, type: 3}
-  ramGroupOriginal: {fileID: 0}
+  ramGroupOriginal: {fileID: 6825328329260190195, guid: 3a5770e62f124364eb6f30e36199b38f, type: 3}
 --- !u!4 &983596117
 Transform:
   m_ObjectHideFlags: 0
