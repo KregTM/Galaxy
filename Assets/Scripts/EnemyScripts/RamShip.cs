@@ -6,13 +6,30 @@ public class RamShip : MonoBehaviour
 {
     public SpriteRenderer shipRenderer;
     public MovingDirections direction;
-    private float speed = 0.25f;
+    private float speed = 0.1f;
     private float halfWidth;
     private float halfHeight;
+    private float heal = 200;
     void Start()
     {
         halfWidth = shipRenderer.sprite.bounds.size.x / 2;
         halfHeight = shipRenderer.sprite.bounds.size.y / 2;
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        GameObject otherObject = collider.gameObject ;
+        PlayerBullet bulletObject = otherObject.GetComponent<PlayerBullet>();
+        if(bulletObject != null)
+        {
+            heal -= bulletObject.damage;
+            print(heal);
+            Destroy(otherObject);
+            if(heal <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -82,7 +99,7 @@ public class RamShip : MonoBehaviour
         Vector3 newPosition = transform.position;
         newPosition.y += speed;
         Vector3 checkPosition = newPosition;
-        checkPosition.y += halfWidth;
+        checkPosition.y += halfHeight;
 
         if (Helpers.IsPositionOnScreen(checkPosition) == true)
         {
@@ -103,7 +120,7 @@ public class RamShip : MonoBehaviour
         Vector3 newPosition = transform.position;
         newPosition.y -= speed;
         Vector3 checkPosition = newPosition;
-        checkPosition.y -= halfWidth;
+        checkPosition.y -= halfHeight;
 
         if (Helpers.IsPositionOnScreen(checkPosition) == true)
         {
