@@ -6,7 +6,7 @@ public class RamShip : MonoBehaviour
 {
     public SpriteRenderer shipRenderer;
     public MovingDirections direction;
-    private float speed = 0.1f;
+    private float speed = 0.25f;
     private float halfWidth;
     private float halfHeight;
     private float heal = 200;

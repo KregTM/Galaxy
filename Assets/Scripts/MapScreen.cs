@@ -9,4 +9,9 @@ public class MapScreen : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(SceneIDs.gameSceneID);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
